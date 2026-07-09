@@ -4,8 +4,8 @@ A static, multi-page educational site covering six leveraged ETF strategies. Bui
 
 **Author:** Azqato
 **Status:** Live (M3 complete)
-**Live site:** https://azqato.github.io/leveraged-strategies/
-**Repository:** https://github.com/Azqato/leveraged-strategies
+**Live site:** https://azqato.github.io/leverage/
+**Repository:** https://github.com/Azqato/leverage
 
 ---
 
@@ -76,7 +76,7 @@ Then visit `http://localhost:8000`.
 
 ## Deploying
 
-The site is live at **https://azqato.github.io/leveraged-strategies/**
+The site is live at **https://azqato.github.io/leverage/**
 
 To deploy updates: push to the `main` branch. GitHub Pages is configured to deploy from the repo root. The site is fully static and requires no additional configuration.
 

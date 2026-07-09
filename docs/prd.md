@@ -137,7 +137,7 @@ This convention ensures research sources are preserved with the content without 
 
 ## 5. Success Criteria
 
-- Site is live at https://azqato.github.io/leveraged-strategies/ with all seven pages navigable
+- Site is live at https://azqato.github.io/leverage/ with all seven pages navigable
 - All six strategy pages share an identical section skeleton
 - Lighthouse accessibility score of 95+ on every page
 - Total page weight under 100KB per page (no images required in v1)
@@ -151,7 +151,7 @@ This convention ensures research sources are preserved with the content without 
 |-----------|--------|-------------|
 | M1: Skeleton | Complete | Seven pages, shared nav, placeholder strategy sections |
 | M2: Content drafts | Complete | All six `/strategies/*.md` files researched and fully written |
-| M3: Content port | Complete | All seven HTML pages rewritten with full strategy content. All placeholders replaced. Four badge/lead corrections applied. Site live at https://azqato.github.io/leveraged-strategies/ |
+| M3: Content port | Complete | All seven HTML pages rewritten with full strategy content. All placeholders replaced. Four badge/lead corrections applied. Site live at https://azqato.github.io/leverage/ |
 | M4: Polish | Pending | Accessibility pass, responsive QA, Lighthouse audit |
 
 ---

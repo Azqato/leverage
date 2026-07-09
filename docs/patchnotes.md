@@ -5,6 +5,18 @@ Versions follow `M<milestone>.<patch>` until the site goes live, then switch to 
 
 ---
 
+## [M3.4] — 2026-07-08 — Repository rename to leverage
+
+Updated all URL references following GitHub repository rename from `leveraged-strategies` to `leverage`.
+
+### Changed
+- `README.md` — live site URL and repository URL updated to `https://azqato.github.io/leverage/` and `https://github.com/Azqato/leverage`
+- `docs/patchnotes.md` — repository and live site URLs updated
+- `docs/prd.md` — live site URLs updated
+- Git remote `origin` updated to `https://github.com/Azqato/leverage`
+
+---
+
 ## [M3.3] — 2026-06-15 — Cross-site nav links
 
 Added two external nav links above Support on all pages, connecting the site to the broader Azqato site family.
@@ -37,8 +49,8 @@ Documentation updated to reflect M3 completion and the live site URL. Repository
 - `docs/prd.md` — version bumped to 1.4; M3 milestone marked Complete with live URL; success criteria updated with live URL; version history updated
 
 ### Notes
-- Repository: https://github.com/Azqato/leveraged-strategies
-- Live site: https://azqato.github.io/leveraged-strategies/ (GitHub Pages, deploy from `main` root)
+- Repository: https://github.com/Azqato/leverage
+- Live site: https://azqato.github.io/leverage/ (GitHub Pages, deploy from `main` root)
 
 ---
 
