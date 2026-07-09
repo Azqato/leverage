@@ -137,6 +137,11 @@ main {
   margin-bottom: 8px;
 }
 
+a.logo-link {
+  text-decoration: none;
+  color: inherit;
+}
+
 .logo-text {
   display: block;
   font-size: 1.125rem;
@@ -669,6 +674,11 @@ footer a:hover {
 
   footer {
     padding: 20px;
+  }
+
+  .table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
   }
 }
 

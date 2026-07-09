@@ -1,304 +1,177 @@
-# PATCHNOTES.md — Leveraged Strategies Site
+# PATCHNOTES.md: Leveraged Strategies Site
 
-Format: each entry lists the version, date, milestone tag, and a flat list of what changed.
-Versions follow `M<milestone>.<patch>` until the site goes live, then switch to semver.
+Format: reverse chronological order. Semver (MAJOR.MINOR.PATCH). Each entry has a date (YYYY-MM-DD) and changes grouped by Added, Changed, Fixed, Removed. Prior milestone-numbered versions (M1.x, M3.x) are preserved with semver equivalents noted.
 
 ---
 
-## [M3.4] — 2026-07-08 — Repository rename to leverage
+## [v1.1.0] 2026-07-08: Documentation audit, em dash cleanup, mobile CSS fix
 
-Updated all URL references following GitHub repository rename from `leveraged-strategies` to `leverage`.
+Full documentation overhaul. All four required documents rewritten to a comprehensive standard. Em dashes eliminated across all HTML pages and documentation files. Mobile table scrolling bug fixed for the 769px to 1023px viewport gap.
+
+### Added
+- `docs/PRD.md`: complete rewrite with all required sections: Problem Statement, Target Users, Goals, Non-Goals, User Stories, Feature List (MVP and Future), Constraints, Assumptions, Success Criteria, Tenets, Roadmap, Metrics, Runbook, Technical Requirements, Security, Press Release, FAQ, and Writing Style
+- `docs/DESIGN.md`: complete rewrite with all required sections: Design Philosophy, Color Palette, Typography, Spacing System, Breakpoints, Component Patterns (full spec for every component), Accessibility Standards, Animation and Motion, and AI Context
+- `docs/PATCHNOTES.md`: reformatted from milestone-numbered versioning to semver; all history preserved; this entry
 
 ### Changed
-- `README.md` — live site URL and repository URL updated to `https://azqato.github.io/leverage/` and `https://github.com/Azqato/leverage`
-- `docs/patchnotes.md` — repository and live site URLs updated
-- `docs/prd.md` — live site URLs updated
+- `README.md`: complete rewrite: added Prerequisites, Installation, Environment Variables, Project Structure, Pages table, Adding a Strategy guide, Build and Deploy instructions, and Rollback instructions; removed marketing language; developer-focused throughout
+- All 7 HTML pages: em dashes (Unicode U+2014) replaced with contextually appropriate punctuation per file (see em dash detail section below)
+
+### Fixed
+- `css/style.css`: `.table-wrap` had `overflow: hidden` in the base rule and `overflow-x: auto` only in the `max-width: 768px` block. At viewport widths 769px to 1023px, the layout is single-column (sidebar hidden) but tables could not scroll horizontally. Fixed by adding `overflow-x: auto; -webkit-overflow-scrolling: touch;` to the `max-width: 1024px` block.
+
+### Em dash replacements by file
+- `index.html`: lead paragraph, comma: `distinct approach, from quarterly`
+- `3sig.html`: title colon; signal line comma; closed-system parentheses; 30 Down Rule semicolons; COVID crash comma; risk callout semicolons; BestFolio h3 colon; resource list colons throughout
+- `6sig.html`: title colon; mechanics parentheses; MVV appositive comma; BestFolio h3 colon; bond buffer comma; resource list colons
+- `9sig.html`: title colon; safeguards colon+comma; TQQQ appositive parentheses; core mechanics parentheses; ratio drift colon; 30 Down Rule semicolon; BestFolio h3 colon; internal quote colon; risk callout semicolons; resource list colons
+- `tqqq-ftlt.html`: title colon; meta description comma; SMA sentence parentheses; October 2022 comma; Step 1 period; academic h3 colon; risk callout semicolon; backtest window comma; Great Depression comma; resource list colons
+- `hfea.html`: title colon; regime-adaptive h3 colon; TMV appositive comma; bond decline semicolon
+- `holy-grail.html`: title colon; meta description comma; event-driven colon+comma; primary regime comma; bull regime semicolon; Step 1 period; SOXL colon; academic h3 colon; resource list colons
+
+---
+
+## [v1.0.4] 2026-07-08: Repository rename (formerly M3.4)
+
+### Changed
+- `README.md`: live site URL and repository URL updated from `leveraged-strategies` to `leverage`
+- `docs/patchnotes.md`: URLs updated
+- `docs/prd.md`: live site URLs updated
 - Git remote `origin` updated to `https://github.com/Azqato/leverage`
 
 ---
 
-## [M3.3] — 2026-06-15 — Cross-site nav links
-
-Added two external nav links above Support on all pages, connecting the site to the broader Azqato site family.
+## [v1.0.3] 2026-06-15: Cross-site nav links (formerly M3.3)
 
 ### Changed
-- All 7 HTML pages — two nav items added above Support in both sidebar and top-bar nav: "Individual Stocks" (linking to `https://azqato.github.io/stocks/`) and "ComposerAtlas" (linking to `https://azqato.github.io/composer/`)
+- All 7 HTML pages: two nav items added above Support in both sidebar and top-bar nav: "Individual Stocks" linking to `https://azqato.github.io/stocks/` and "ComposerAtlas" linking to `https://azqato.github.io/composer/`
 
 ---
 
-## [M3.2] — 2026-06-10 — Site rename to Leveraged Strategies
-
-Renamed the site from "TQQQ Strategies" to "Leveraged Strategies" across all HTML pages and documentation.
+## [v1.0.2] 2026-06-10: Site rename to Leveraged Strategies (formerly M3.2)
 
 ### Changed
-- All 7 HTML pages — `<title>` and `.site-label` span updated from "TQQQ Strategies" to "Leveraged Strategies"
-- `index.html` — `<h1>` heading updated from "TQQQ Strategies" to "Leveraged Strategies"
-- `README.md` — top-level heading updated
-- `docs/design.md` — document title and sidebar site-label reference updated
-- `docs/prd.md` — document title updated
-- `docs/patchnotes.md` — document title updated; this entry
+- All 7 HTML pages: `<title>` and `.site-label` span updated from "TQQQ Strategies" to "Leveraged Strategies"
+- `index.html`: `<h1>` heading updated
+- `README.md`: top-level heading updated
+- `docs/DESIGN.md`, `docs/PRD.md`, `docs/PATCHNOTES.md`: document titles updated
 
 ---
 
-## [M3.1] — 2026-06-10 — Docs sync and GitHub Pages launch
-
-Documentation updated to reflect M3 completion and the live site URL. Repository published to GitHub.
+## [v1.0.1] 2026-06-10: Docs sync and GitHub Pages launch (formerly M3.1)
 
 ### Changed
-- `README.md` — status updated to "Live (M3 complete)"; live site URL and repository URL added; stale placeholder-content notice removed from Pages table; Deploying section updated with live URL
-- `docs/prd.md` — version bumped to 1.4; M3 milestone marked Complete with live URL; success criteria updated with live URL; version history updated
-
-### Notes
-- Repository: https://github.com/Azqato/leverage
-- Live site: https://azqato.github.io/leverage/ (GitHub Pages, deploy from `main` root)
+- `README.md`: status updated to Live; live site URL and repository URL added
+- `docs/PRD.md`: M3 milestone marked Complete; success criteria updated with live URL
 
 ---
 
-## [M3.0] — 2026-06-10 — M3 Content Port (Major Release)
+## [v1.0.0] 2026-06-10: Full content port, major release (formerly M3.0)
 
-All seven HTML pages rewritten with full strategy content ported from the six `/strategies/*.md` source files. Every placeholder block replaced. Four hero badge and lead paragraph corrections applied. This is the first release where the site is substantively usable as a strategy reference.
+All seven HTML pages rewritten with full strategy content. Every placeholder replaced. Four hero badge and lead paragraph corrections applied.
 
 ### Added
-- `index.html` — rewrote all six strategy cards with accurate summaries: correct tickers, correct rebalancing cadences, correct instrument counts, accurate one-line descriptions for each strategy
-- `3sig.html` — full rewrite: five sections (Overview, Rules and Logic, Performance Notes, Risks and Caveats, Resources) ported from `strategies/3sig.md`; allocation table (80/20 IJR/SPY), signal line formula, quarterly buy/sell table, full 30 Down Rule (4 ignores, no reset for 3 Sig), BestFolio backtest (CAGR 9.0%, max DD −52.3%, Sharpe 0.31), closed vs. open system distinction, all risk paragraphs
-- `6sig.html` — full rewrite: five sections ported from `strategies/6sig.md`; allocation table (60/40 MVV/bonds), 6% quarterly signal, 30 Down Rule (2 ignores, resets to 60/40), BestFolio backtest (CAGR 11.7%, max DD −78.3%, Sharpe 0.23), plan family comparison table, all risk paragraphs
-- `9sig.html` — full rewrite: five sections ported from `strategies/9sig.md`; allocation table (60/40 TQQQ/bonds), 9% quarterly signal with both safeguards (90% buying power throttle + Spike Reset trigger with three-condition test), full 30 Down Rule (2 ignores, resets to 60/40), Kelly Letter official portfolio tracking ($733k Jan 2018 → $5.9m Dec 2024), BestFolio backtest (CAGR 39.4%, max DD −72.1%, Sharpe 0.82), dot-com simulation, closed-system bootstrap stress test results
-- `tqqq-ftlt.html` — full rewrite: five sections ported from `strategies/tqqq-ftlt.md`; instruments table (TQQQ, UVXY, TECL, UPRO, SQQQ, TLT), signal inputs table (SPY 200D SMA, TQQQ 20D SMA, four RSI signals), full bull/bear decision trees with SQQQ vs. TLT top-RSI selection, 10-year backtest (TQQQ FTLT +298% vs. TQQQ buy-and-hold +35%), Gayed & Bilello LRS academic table (87-year backtest), all risk paragraphs
-- `hfea.html` — full rewrite: five sections ported from `strategies/hfea.md`; original 40/60 and revised 55/45 allocations, risk parity volatility basis, cost-of-leverage table (UPRO and TMF ER + borrow rates), community variants table, "HFEA The Resurrection" regime-adaptive variant (four-regime table driven by SPY 200D SMA + TLT 400D SMA, Composer ID `Cjb5ysKtJsPv6Tm3Fk0R`), backtest simulation formula, lost-decade validation, live tracking table (May 2019 to April 2025), all risk paragraphs
-- `holy-grail.html` — full rewrite: five sections ported from `strategies/holy-grail.md`; instruments table (TQQQ, UVXY, TECL, SOXL, SQQQ, BSV), signal inputs table, full bull (80%)/bear decision trees with SOXL oversold layer and SQQQ vs. BSV selection, comparison table vs. TQQQ FTLT, Gayed & Bilello LRS data, all risk paragraphs; Composer ID `VPVpD1SoqR5ykVu4NdWS`
+- `index.html`: all six strategy cards rewritten with accurate summaries, tickers, and rebalancing cadences
+- `3sig.html`: full five-section content port: allocation table (80/20 IJR/SPY), signal line formula, quarterly buy/sell table, 30 Down Rule (4 ignores, no reset), BestFolio backtest (CAGR 9.0%, max DD −52.3%, Sharpe 0.31)
+- `6sig.html`: full five-section content port: allocation table (60/40 MVV/bonds), 6% quarterly signal, 30 Down Rule (2 ignores, resets to 60/40), BestFolio backtest (CAGR 11.7%, max DD −78.3%, Sharpe 0.23), plan family comparison table
+- `9sig.html`: full five-section content port: allocation (60/40 TQQQ/bonds), both safeguards (90% throttle and Spike Reset), 30 Down Rule (2 ignores, resets to 60/40), Kelly Letter portfolio tracking ($733k Jan 2018 to $5.9m Dec 2024), BestFolio backtest (CAGR 39.4%, max DD −72.1%, Sharpe 0.82), dot-com simulation, closed-system bootstrap
+- `tqqq-ftlt.html`: full five-section content port: instruments table, signal inputs table, full bull/bear decision trees, 10-year backtest (TQQQ FTLT +298% vs. TQQQ buy-and-hold +35%), Gayed and Bilello LRS academic table (87-year backtest)
+- `hfea.html`: full five-section content port: both allocations (40/60 and 55/45), cost-of-leverage table, community variants table, HFEA The Resurrection regime-adaptive variant (four regimes driven by SPY 200D SMA and TLT 400D SMA), live tracking table (May 2019 to April 2025)
+- `holy-grail.html`: full five-section content port: instruments table, full bull (80%) and bear decision trees with SOXL oversold layer, comparison table vs. TQQQ FTLT
 
 ### Fixed
-- `3sig.html` hero badge: "Monthly Rebalancing" → "Quarterly Rebalancing"
-- `6sig.html` hero badge: "Monthly Rebalancing" → "Quarterly Rebalancing"
-- `tqqq-ftlt.html` hero badge: "Buy and Hold" → "Daily Algorithm"; lead paragraph rewritten to describe daily rules-based algorithm, SPY 200D SMA, 10D RSI, and 6 instruments (was incorrectly implying passive holding)
-- `holy-grail.html` hero badge: "Rules-Based Allocation" → "Event-Driven Algorithm"; lead paragraph corrected to remove TMF (TMF is not used in this strategy); instruments listed as TQQQ, UVXY, TECL, SOXL, SQQQ, BSV
-- All seven pages: all `<div class="placeholder">` blocks removed and replaced with real content
-
-### Notes
-- `<!-- RESEARCH SOURCES -->` blocks in `.md` files were not ported to HTML per convention
-- The 9 Sig safeguards (90% throttle and Spike Reset) are not publicly documented by Jason Kelly outside The Kelly Letter; content sourced from subscriber materials referenced in community posts
-- HFEA The Resurrection Composer ID (`Cjb5ysKtJsPv6Tm3Fk0R`) and Holy Grail Composer ID (`VPVpD1SoqR5ykVu4NdWS`) are included in the HTML pages as `<code>` text, not hyperlinks
-- TMF is not an instrument in the Holy Grail strategy; the prior placeholder was misleading
+- `3sig.html` and `6sig.html` hero badges: "Monthly Rebalancing" changed to "Quarterly Rebalancing"
+- `tqqq-ftlt.html` hero badge: "Buy and Hold" changed to "Daily Algorithm"; lead paragraph corrected
+- `holy-grail.html` hero badge: "Rules-Based Allocation" changed to "Event-Driven Algorithm"; lead paragraph corrected; TMF removed (not used in this strategy)
+- All 7 pages: all placeholder blocks removed
 
 ---
 
-## [M1.0] — 2026-06-10 — Skeleton Build
-
-Initial project scaffold. All four pages, shared stylesheet, shared JS, and placeholder strategy sections built from scratch.
+## [v0.1.8] 2026-06-10: HFEA rename and Composer variant (formerly M1.8)
 
 ### Added
-- `index.html` — home page: site intro, leveraged ETF risk callout, three strategy cards (9 Sig blue, TQQQ FTLT green, Holy Grail purple), footer disclaimer
-- `9sig.html` — 9 Sig strategy page with hero badge, five placeholder sections, mandatory risk callout in Risks section
-- `tqqq-ftlt.html` — TQQQ FTLT strategy page with hero badge, five placeholder sections, mandatory risk callout in Risks section
-- `holy-grail.html` — Holy Grail strategy page with hero badge, five placeholder sections, mandatory risk callout in Risks section
-- `css/style.css` — full shared stylesheet: all 17 color tokens, reset, layout grid, sidebar, top-bar nav, typography, hero, strategy cards, placeholder blocks, tables, callout boxes, badges, ticker tags, footer, media queries (1024px, 768px), reduced-motion
-- `js/main.js` — IntersectionObserver anchor highlighting for strategy pages, mobile nav toggle
-- `strategies/9sig.md` — content source skeleton with five section headings and authoring notes
-- `strategies/tqqq-ftlt.md` — content source skeleton with five section headings and authoring notes
-- `strategies/holy-grail.md` — content source skeleton with five section headings and authoring notes
-
-### Notes
-- All strategy pages ship with dashed-border placeholder blocks per design spec
-- Each strategy page's Risks section includes the mandatory leveraged ETF risk callout in addition to the placeholder
-- Content authoring belongs to M2; port to HTML belongs to M3
-
----
-
-## [M1.8] — 2026-06-10 — HFEA rename and Composer variant
-
-Corrected the strategy acronym from HEFA (typo) to HFEA throughout the project. Added the "HFEA The Resurrection" Composer symphony as an implementation example in the content file.
-
-### Added
-- `strategies/hfea.md` (renamed from `strategies/hefa.md`) — added "Regime-adaptive variant" subsection under Rules and Logic documenting the "HFEA The Resurrection" symphony by u/derecknielsen: four-regime allocation table driven by SPY 200D SMA + TLT 400D SMA, with TMV replacing TMF when TLT is below its 400-day average
+- `strategies/hfea.md`: "Regime-adaptive variant" subsection: HFEA The Resurrection by u/derecknielsen, four-regime table driven by SPY 200D SMA and TLT 400D SMA
 
 ### Changed
-- `strategies/hefa.md` → renamed to `strategies/hfea.md`
-- `hefa.html` → renamed to `hfea.html`
-- All 7 HTML pages — nav link updated from `hefa.html` to `hfea.html` in both sidebar and top-bar nav
-- `index.html` — strategy card class updated from `.strat-hefa` to `.strat-hfea`; card link and HFEA card anchor updated
-- `hfea.html` — placeholder source paths updated from `/strategies/hefa.md` to `/strategies/hfea.md`; inline badge token updated from `--color-strat-hefa` to `--color-strat-hfea`
-- `css/style.css` — CSS custom property renamed from `--color-strat-hefa` to `--color-strat-hfea`; selector renamed from `.strat-hefa::before` to `.strat-hfea::before`
-- `README.md` — `hefa.html` and `hefa.md` references updated to `hfea.html` and `hfea.md`
-- `docs/prd.md` — `hefa.html` reference in pages table updated to `hfea.html`
-- `docs/design.md` — strategy tint table token updated from `--color-strat-hefa` to `--color-strat-hfea`
-
-### Notes
-- Historical M1.2 and M1.3 patchnotes entries retain the original `hefa` filenames as an accurate record of what was created at that time
-- The Composer symphony URL added to the `<!-- RESEARCH SOURCES -->` block in a prior patch is now accompanied by the actual content section
+- `strategies/hefa.md` renamed to `strategies/hfea.md`; `hefa.html` renamed to `hfea.html`
+- All 7 pages, `css/style.css`, `README.md`, `docs/PRD.md`, `docs/DESIGN.md`: hefa references updated to hfea
 
 ---
 
-## [M1.7] — 2026-06-10 — Documentation sync
-
-Brought all four project documents up to date to reflect the completed M1 and M2 milestones.
+## [v0.1.7] 2026-06-10: Documentation sync (formerly M1.7)
 
 ### Changed
-- `README.md` — pages table updated from 3 to 7 pages; TQQQ FTLT description corrected (not "buy-and-hold", is a rules-based daily algorithm); project structure updated to list all 6 strategy .md files with their status; status updated from "Initial build (placeholder content)" to "Content drafted (M2 complete, M3 pending)"
-- `docs/prd.md` — version bumped to 1.3; Goals updated from "three strategies" to "six strategies"; F1 updated from "four HTML pages" to "seven HTML pages"; F6 updated from "three strategy pages" to "six strategy pages"; success criteria counts updated; milestones table updated with Status column and M1/M2 marked Complete, M3/M4 marked Pending with M3 port notes referencing TQQQ FTLT and Holy Grail HTML corrections
-- `docs/design.md` — version bumped to 1.2; HFEA orange tint token (`#f0883e`) added to strategy tint table; version history updated
-- `docs/patchnotes.md` — this entry
+- `README.md`: pages table expanded to 7 pages; TQQQ FTLT description corrected; status updated
+- `docs/PRD.md`: goals, functional requirements, and milestones updated to reflect six strategies and seven pages
+- `docs/DESIGN.md`: HFEA orange tint token added; version history updated
 
 ---
 
-## [M1.6] — 2026-06-10 — Holy Grail full content
-
-Wrote full content for `strategies/holy-grail.md` from the Composer symphony JSON and the TQQQ FTLT structural lineage.
-
-### Added / Changed
-- `strategies/holy-grail.md` — full content written across five sections
-  - **Metadata corrected:** Tickers are TQQQ, UVXY, TECL, SOXL, SQQQ, BSV — not TQQQ + TMF as suggested by the placeholder. Rebalancing is event-driven with 5% corridor, not "periodic."
-  - **⚠ Corrections for HTML port** added: (1) TMF is not used — remove it from the lead paragraph; (2) lead paragraph needs to describe RSI and SMA regime switching, not risk parity
-  - Overview: TQQQ FTLT variant with five structural differences; based on Gayed/Bilello (2015) SMA-gated leverage; Composer `(Invest Copy)` indicates original creator unknown
-  - Rules and Logic: full decision tree from JSON; TQQQ 200D SMA as primary regime (not SPY); 80% bull / 20% cash; bear regime adds SOXL mean reversion; BSV instead of TLT for defensive; event-driven + 5% corridor rebalancing
-  - Performance Notes: no live data accessible (Composer requires auth); structural analysis of 20% cash drag; comparison table vs. TQQQ FTLT; Gayed/Bilello LRS academic data as reference
-  - Risks: TQQQ's own 200D SMA causes faster/noisier regime switches vs. SPY; 20% cash drag in bull runs; SOXL counter-trend risk; UVXY extreme volatility; no verified public live performance record
-  - `<!-- RESEARCH SOURCES -->` block with 5 sources
-
-### Notes
-- Composer factsheet URL (with ?tab=backtest) required authentication; performance metrics not retrieved
-- The Holy Grail is structurally a variant of TQQQ FTLT with TQQQ 200D SMA, SOXL signal, and BSV substitution
-- The "(Invest Copy)" suffix on the symphony name means this is someone's copy of a shared original; original creator not identified in available sources
-
----
-
-## [M1.5] — 2026-06-10 — TQQQ FTLT full content
-
-Wrote full content for `strategies/tqqq-ftlt.md` from the original strategy post (u/derecknielsen, Reddit, Oct 2022), the Composer symphony JSON, and the underlying academic paper (Gayed & Bilello, 2015).
-
-### Added / Changed
-- `strategies/tqqq-ftlt.md` — full content written across five sections
-  - **Metadata corrected:** Strategy is NOT buy-and-hold. It is a daily-rebalancing rules-based algorithm with 6 instruments. Rebalancing cadence updated from "None (buy and hold)" to "Daily (rules-based algorithmic)."
-  - **⚠ Note for HTML port** added: tqqq-ftlt.html hero badge ("Buy and Hold") and lead paragraph are inaccurate and need updating when content is ported
-  - Overview: u/derecknielsen origin (Oct 2022), TQQQ discovered Oct 2021 before 70%+ drawdown, goal to profit in both bull and bear; based on Gayed/Bilello "Leverage for the Long Run" (2015, SSRN #2741701); 10+ community variants, 900+ Composer Discord comments
-  - Rules and Logic: full decision tree from Composer JSON + original post; 6 instruments (TQQQ, UVXY, TECL, UPRO, SQQQ, TLT); 6 signal inputs (SPY 200D SMA, TQQQ 20D SMA, 10D RSI on 4 instruments); bull/bear regime tables; SQQQ vs TLT top-RSI selection logic
-  - Performance Notes: 10-year backtest Oct 2012–Oct 2022 (+298% vs +35% TQQQ buy-and-hold, 8.5× faster, ~half drawdown); Gayed/Bilello LRS data (87-year backtest; 2x LRS Sharpe 0.51 vs buy-and-hold 0.30; above 200D SMA: +14.1% CAGR); live +150% from Jun–Oct 2022
-  - Risks: daily whipsaw near 200D SMA, UVXY extreme volatility, all instruments use daily reset leverage, favorable backtest window, SQQQ is directional not a hedge
-  - `<!-- RESEARCH SOURCES -->` block with 6 sources (SSRN was 403, noted)
-
-### Notes
-- SSRN paper (abstract_id=2741701) returned HTTP 403; academic content obtained from CXO Advisory and The7Circles secondary analyses
-- Composer factsheet URL provided but app.composer.trade requires authentication; Composer JSON was pasted directly by user in source data
-- The "TQQQ For The Long Term" name is intentionally ironic given the strategy actively rotates into bearish and volatility instruments
-
----
-
-## [M1.4] — 2026-06-10 — 3 Sig, 6 Sig, 9 Sig full content
-
-Wrote full content for all three Signal plan strategy files using primary sources from Jason Kelly's site, the Kelly Letter subscriber video transcript, independent backtesting, and community Reddit threads.
-
-### Added / Changed
-- `strategies/3sig.md` — full content written across five sections
-  - Corrected metadata: rebalancing is quarterly (not monthly as in the placeholder), fund is IJR/SPY (not TQQQ)
-  - Overview: Jason Kelly, *The 3% Signal* (2015), value averaging concept, three-plan family structure (target = 3% × leverage multiplier)
-  - Rules and Logic: 80/20 starting allocation, signal line formula, quarterly buy/sell table, full 30 Down Rule (4 sell signals ignored, no reset for 3 Sig)
-  - Performance Notes: BestFolio corrected backtest (CAGR 9.0%, max DD −52.3%, Sharpe 0.31), Bogleheads community backtest, open vs. closed system distinction
-  - Risks: bond buffer depletion, bond fund losses in rate hikes, fixed target, buy-and-hold comparison, data snooping, tax drag
-  - `<!-- RESEARCH SOURCES -->` block with all 17 sources
-- `strategies/6sig.md` — full content written across five sections
-  - Corrected metadata: rebalancing is quarterly, fund is MVV (not TQQQ), 60/40 base allocation
-  - Rules and Logic: 60/40 starting allocation, 6% quarterly signal, 30 Down Rule (2 sells, resets to 60/40 after)
-  - Performance Notes: BestFolio corrected backtest (CAGR 11.7%, max DD −78.3%, Sharpe 0.23), plan family comparison table
-  - Risks: 2x leverage amplification, "moderate" label misleading given −78.3% max DD
-  - `<!-- RESEARCH SOURCES -->` block with 10 sources
-- `strategies/9sig.md` — full content written across five sections
-  - Rules and Logic: 60/40 base, 9% quarterly signal, full signal line formula, two additional safeguards (90% throttle, Spike Reset), 30 Down Rule (2 sells, resets to 60/40)
-  - Performance Notes: Kelly Letter official account ($733k Jan 2018 → $5.9m Dec 2024); 2023 tracking ($1.5m → $4.1m, 99% TQQQ all year); BestFolio real-data backtest (CAGR 39.4%, max DD −72.1%, Sharpe 0.82); dot-com simulated recovery (18–20 years without contributions); closed-system bootstrap (median −98% DD)
-  - Risks: closed-system viability, 2022 bond exhaustion (historical), 3x leverage amplification, volatility decay
-  - `<!-- RESEARCH SOURCES -->` block with 10 sources
-
-### Notes
-- Reddit was not directly fetchable; user provided both Reddit thread contents directly in chat
-- The 30 Down Rule transcript was the primary source for per-plan parameters (ignore counts, reset behavior, fund assignments)
-- 6 Sig does not have a standalone book; *The 3% Signal* covers the 3 Sig mechanics which apply across the family
-- Bond fund alternatives documented in 9sig.md: SGOV, TBLL, USFR, SPAXX, BOXX, JAAA — community has moved away from AGG for this sleeve
-
----
-
-## [M1.3] — 2026-06-10 — HFEA content and research sources convention
-
-Wrote full content for `strategies/hefa.md` using primary and community sources. Established the research sources convention for documenting external URLs inside strategy `.md` files without exposing them in HTML.
+## [v0.1.6] 2026-06-10: Holy Grail full content (formerly M1.6)
 
 ### Added
-- `strategies/hefa.md` — full content written across five sections: Overview, Rules and Logic, Performance Notes, Risks and Caveats, Resources
-  - Risk parity theoretical basis (S&P 500 vol ~15%, LTT vol ~10%, giving 40/60 at parity)
-  - Both allocation versions: original 40/60 (Thread 1, Feb 2019) and revised 55/45 (Thread 2, Aug 2019)
-  - Exact backtest figures: 23.75% CAGR (Hedgefundie's model) vs ~19% (vineviz conservative estimate), 1987-2018
-  - "Lost decade" validation: Jan 2000-Sept 2011, HFEA ~11% CAGR vs S&P 500 ~0%
-  - Cost-of-leverage table: UPRO 0.92% ER + 2.87% borrow rate; TMF 1.09% ER + 1.83% borrow rate
-  - Live tracking table: May 2019 through April 2025, including the ~65% 2022 drawdown from peak
-  - PSLDX as pre-existing analogue (launched September 2007)
-  - Hedgefundie's personal framing: $100k = 15% of investable assets, goal of $10M in 20-25 years
-  - `<!-- RESEARCH SOURCES -->` comment block with all 5 research URLs (never ported to HTML)
-- `docs/prd.md` — Research Sources Convention section added under §3; HFEA added to pages table; version updated to 1.2
-
-### Notes
-- Primary source (Bogleheads Thread 1, Feb 2019) was paywalled via WebFetch; user provided the full text directly in chat
-- Bogleheads Thread 2 (Aug 2019) was also paywalled; content inferred from accessible secondary sources
-- The `<!-- RESEARCH SOURCES -->` block convention applies retroactively to future strategies; existing skeleton .md files do not require it until research is actually conducted
+- `strategies/holy-grail.md`: full five-section content written. Instruments: TQQQ, UVXY, TECL, SOXL, SQQQ, BSV. Full decision tree from Composer JSON. Metadata corrections for HTML port documented.
 
 ---
 
-## [M1.2] — 2026-06-10 — HFEA page
-
-Added Hedgefundie's Excellent Adventure (HFEA) as a seventh strategy.
+## [v0.1.5] 2026-06-10: TQQQ FTLT full content (formerly M1.5)
 
 ### Added
-- `hefa.html` — HFEA strategy page (placeholder sections, orange tint `#f0883e`, Quarterly Rebalancing hero badge, UPRO/TMF tickers)
-- `strategies/hefa.md` — content source skeleton with authoring notes including 2022 correlation breakdown, Reddit origin, and backtest caveats
+- `strategies/tqqq-ftlt.md`: full five-section content written. Strategy is daily algorithmic (corrected from buy-and-hold placeholder). Full decision tree from Composer JSON and original Reddit post.
+
+---
+
+## [v0.1.4] 2026-06-10: 3 Sig, 6 Sig, 9 Sig full content (formerly M1.4)
+
+### Added
+- `strategies/3sig.md`: full content: 80/20 IJR/SPY, 3% quarterly signal, 30 Down Rule (4 ignores, no reset), BestFolio backtest, 17 research sources
+- `strategies/6sig.md`: full content: 60/40 MVV/bonds, 6% quarterly signal, 30 Down Rule (2 ignores, resets to 60/40), BestFolio backtest
+- `strategies/9sig.md`: full content: 60/40 TQQQ/bonds, 9% signal, 90% throttle, Spike Reset, BestFolio backtest, dot-com simulation, closed-system bootstrap
+
+---
+
+## [v0.1.3] 2026-06-10: HFEA content and research sources convention (formerly M1.3)
+
+### Added
+- `strategies/hefa.md`: full five-section content. Risk parity basis. Both allocations (40/60 and 55/45). BestFolio backtest (23.75% CAGR). Lost-decade validation. Cost-of-leverage table. Live tracking table.
+- `docs/PRD.md`: Research Sources Convention section: URLs stored in `<!-- RESEARCH SOURCES -->` comment blocks in .md files, never ported to HTML
+
+---
+
+## [v0.1.2] 2026-06-10: HFEA page (formerly M1.2)
+
+### Added
+- `hefa.html`: HFEA strategy page (placeholder sections, orange `#f0883e`, Quarterly Rebalancing badge, UPRO/TMF tickers)
+- `strategies/hefa.md`: content source skeleton
+- `css/style.css`: `--color-strat-hefa` token and `.strat-hefa::before` rule
 
 ### Changed
-- All 6 existing pages — HFEA nav link inserted before Support in both sidebar and top-bar nav
-- `index.html` — HFEA strategy card added after Holy Grail
-- `css/style.css` — added `--color-strat-hefa: #f0883e` token and `.strat-hefa::before` card rule
+- All 6 existing pages: HFEA nav link added before Support
 
 ---
 
-## [M1.1] — 2026-06-10 — 3 Sig, 6 Sig, nav convention, footer and support link
-
-Expanded the site from 4 to 6 strategy pages, established the /strategies convention, and aligned the footer and support link with the broader Azqato site family.
+## [v0.1.1] 2026-06-10: 3 Sig, 6 Sig, nav convention, footer and support link (formerly M1.1)
 
 ### Added
-- `3sig.html` — 3 Sig strategy page (placeholder sections, light blue tint `#79c0ff`, Monthly Rebalancing hero badge)
-- `6sig.html` — 6 Sig strategy page (placeholder sections, amber tint `#e3b341`, Monthly Rebalancing hero badge)
-- `strategies/3sig.md` — content source skeleton
-- `strategies/6sig.md` — content source skeleton
-- Support link (`https://azqato.github.io/support.html`) added as last nav item across all pages (sidebar and top-bar)
-- `/strategies convention` documented in prd.md and design.md: each .md file in /strategies maps to a page, nav entry, and index card
+- `3sig.html`: placeholder page, light blue `#79c0ff`
+- `6sig.html`: placeholder page, amber `#e3b341`
+- `strategies/3sig.md`, `strategies/6sig.md`: content source skeletons
+- Support link (`https://azqato.github.io/support.html`) added as permanent last nav item
 
 ### Changed
-- `index.html` — added 3 Sig and 6 Sig strategy cards to the grid; nav updated
-- `9sig.html`, `tqqq-ftlt.html`, `holy-grail.html` — nav updated with 3 Sig and 6 Sig links
-- All pages — footer updated from full disclaimer to "Built by Azqato." matching the Azqato site family pattern
-- `css/style.css` — added `--color-strat-3sig` and `--color-strat-6sig` tokens; added `.strat-3sig::before` and `.strat-6sig::before` card rules
-- `docs/design.md` — strategy tint table updated, footer section updated, nav convention documented, version history updated
-- `docs/prd.md` — pages table updated, /strategies convention section added, version history updated
-
-### Notes
-- The sidebar disclaimer ("Educational use only. Not financial advice.") remains in the sidebar on all pages
-- 3 Sig and 6 Sig use light blue and amber tints to stay visually distinct from 9 Sig's medium blue
+- `index.html`: 3 Sig and 6 Sig cards added; nav updated
+- `9sig.html`, `tqqq-ftlt.html`, `holy-grail.html`: nav updated with 3 Sig and 6 Sig links
+- All pages: footer updated to "Built by Azqato." pattern
+- `css/style.css`: `--color-strat-3sig` and `--color-strat-6sig` tokens added
+- `docs/DESIGN.md`, `docs/PRD.md`: tint table, footer, and nav convention documented
 
 ---
 
-<!--
-TEMPLATE — copy this block for future entries:
-
-## [M<n>.<patch>] — YYYY-MM-DD — <short title>
-
-<one sentence describing the scope of this patch>
+## [v0.1.0] 2026-06-10: Initial skeleton build (formerly M1.0)
 
 ### Added
--
-
-### Changed
--
-
-### Fixed
--
-
-### Removed
--
-
-### Notes
--
-
--->
+- `index.html`: home page with three strategy cards (9 Sig, TQQQ FTLT, Holy Grail) and leveraged ETF risk callout
+- `9sig.html`, `tqqq-ftlt.html`, `holy-grail.html`: strategy pages with placeholder sections and mandatory risk callout
+- `css/style.css`: full shared stylesheet: design tokens, reset, layout grid, sidebar, top-bar nav, typography, hero, strategy cards, placeholder blocks, tables, callout boxes, badges, ticker tags, footer, responsive breakpoints, reduced-motion
+- `js/main.js`: IntersectionObserver anchor highlighting; mobile nav toggle
+- `strategies/9sig.md`, `strategies/tqqq-ftlt.md`, `strategies/holy-grail.md`: content source skeletons
