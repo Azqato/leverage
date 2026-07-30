@@ -385,6 +385,20 @@ p:last-child {
   color: var(--color-text-primary);
 }
 
+.strategy-source-link {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  margin-bottom: 2rem;
+}
+
+.strategy-source-link a {
+  color: var(--color-accent);
+}
+
+.strategy-source-link a:hover {
+  color: var(--color-accent-hover);
+}
+
 /* ============================================================
    Strategy cards (index)
    ============================================================ */

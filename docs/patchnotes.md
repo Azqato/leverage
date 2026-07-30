@@ -4,6 +4,14 @@ Format: reverse chronological order. Semver (MAJOR.MINOR.PATCH). Each entry has 
 
 ---
 
+## [v1.1.1] 2026-07-09: TQQQ FTLT Composer link
+
+### Added
+- `tqqq-ftlt.html`: link to original strategy on ComposerAtlas added near top of page, between hero and Overview section
+- `css/style.css`: `.strategy-source-link` style added
+
+---
+
 ## [v1.1.0] 2026-07-08: Documentation audit, em dash cleanup, mobile CSS fix
 
 Full documentation overhaul. All four required documents rewritten to a comprehensive standard. Em dashes eliminated across all HTML pages and documentation files. Mobile table scrolling bug fixed for the 769px to 1023px viewport gap.
