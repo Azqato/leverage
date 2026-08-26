@@ -198,15 +198,33 @@ On hover:
 
 Card structure:
   .card-body (flex: 1)
-    .card-title — 1.0625rem, weight 700, --color-accent
-    .card-summary — 0.9rem, --color-text-secondary, line-height 1.55
+    .card-title: 1.0625rem, weight 700, --color-accent
+    .card-summary: 0.9rem, --color-text-secondary, line-height 1.55
   .card-footer (border-top: 1px solid --color-border, margin-top 16px, padding-top 14px)
-    .card-link — 0.875rem, weight 500, --color-accent
+    .card-link: 0.875rem, weight 500, --color-accent
 ```
+
+### Strategy Source Link (optional, strategy pages)
+
+A small attribution line that can appear between the hero and the first `<section>`. Currently used on `tqqq-ftlt.html` to link to the original Composer strategy.
+
+```
+.strategy-source-link
+  font-size: 0.875rem
+  color: --color-text-secondary
+  margin-bottom: 2rem
+
+.strategy-source-link a: --color-accent
+.strategy-source-link a:hover: --color-accent-hover
+```
+
+Use when a strategy has an authoritative external source that a reader would benefit from seeing immediately, before reading the full page. Do not use for general resource links — those belong in the Resources section.
+
+---
 
 ### Hero (strategy pages only)
 
-Appears at the top of each strategy page above the first h2.
+Appears at the top of each strategy page above the first `<section>`.
 
 ```
 .hero
@@ -423,6 +441,7 @@ Layout grid (sidebar + content)
 Sidebar and top-bar nav
 Typography (h1, h2 with ::before bar, h3, body, lead, captions, ticker)
 Hero (badge, title, sub)
+  .strategy-source-link (optional attribution line, appears after hero)
 Strategy cards (index page)
 Placeholder blocks
 Tables

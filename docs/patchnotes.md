@@ -4,6 +4,32 @@ Format: reverse chronological order. Semver (MAJOR.MINOR.PATCH). Each entry has 
 
 ---
 
+## [v1.2.0] 2026-08-25: Documentation audit (second pass)
+
+Comprehensive second documentation audit. Six new sections added to PRD.md. README rewritten for a general reader. DESIGN.md updated with new component and code block em dash fixes. No changes to HTML pages or CSS beyond what was already live.
+
+### Added
+- `docs/PRD.md §20`: Conventions — naming, formatting, organization, comment density, error handling, commit message style; all derived from codebase
+- `docs/PRD.md §21`: Browser Testing — Microsoft Edge as the designated test browser; manual test checklist at five viewport sizes
+- `docs/PRD.md §22`: Deprecation and Removal — public surface table, redirect policy (tombstone required for removed strategy pages), compatibility entry rules, retired items log
+- `docs/PRD.md §23`: Documentation Versus Reality — discrepancy table comparing docs against code; 8 entries, 7 resolved, 1 open (reference/ folder)
+- `docs/PRD.md §24`: Risks and Open Questions — fragile areas (nav duplication, strategies drift, single CSS file, no automated testing); 4 open questions; 2 answered questions preserved
+- `docs/PRD.md §25`: Working Practice — read-before-editing table, non-negotiable rules, verification checklist, post-change update checklist
+- `docs/DESIGN.md §7`: `.strategy-source-link` component documented (added in v1.1.1, was missing from design spec)
+
+### Changed
+- `README.md`: rewritten for a general reader; developer content (install steps, commands, env vars, build instructions) removed; all developer documentation lives in `docs/PRD.md §13`
+- `docs/PRD.md §11`: session handoff note cleaned up; forward-looking items removed; completed work noted; pending decisions answered and filed in §24
+- `docs/PRD.md §11`: roadmap table updated with v1.1.1 (Complete) and v1.2.0 (Complete) rows
+- `docs/PRD.md §11`: current phase description updated to reflect v1.2.0
+- `docs/PRD.md §14`: third-party integrations table updated with `composeratlas.com` row (added in v1.1.1, was missing)
+- `docs/PRD.md §18`: TQQQ FTLT FAQ answer updated to mention the direct Composer link
+- `docs/PRD.md §19`: version history table updated with v1.1.1 and v1.2.0 entries
+- `docs/DESIGN.md §7`: strategy cards component spec — em dashes in pseudocode (`.card-title — 1.0625rem`) replaced with colons (`.card-title: 1.0625rem`)
+- `docs/DESIGN.md §13`: CSS File Structure updated to include `.strategy-source-link` entry
+
+---
+
 ## [v1.1.1] 2026-07-09: TQQQ FTLT Composer link
 
 ### Added
