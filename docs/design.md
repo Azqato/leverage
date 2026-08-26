@@ -179,7 +179,7 @@ Every h2 carries a `::before` pseudo-element: `display: block; width: 3px; heigh
 ```
 Container: .strategies-grid
   display: grid
-  grid-template-columns: repeat(3, 1fr) — collapses to 1fr at 768px
+  grid-template-columns: repeat(3, 1fr); collapses to 1fr at 768px
   gap: 16px
 
 Card: .strategy-card
@@ -218,7 +218,7 @@ A small attribution line that can appear between the hero and the first `<sectio
 .strategy-source-link a:hover: --color-accent-hover
 ```
 
-Use when a strategy has an authoritative external source that a reader would benefit from seeing immediately, before reading the full page. Do not use for general resource links — those belong in the Resources section.
+Use when a strategy has an authoritative external source that a reader would benefit from seeing immediately, before reading the full page. Do not use for general resource links; those belong in the Resources section.
 
 ---
 
@@ -232,7 +232,7 @@ Appears at the top of each strategy page above the first `<section>`.
   padding-bottom: 2rem
   border-bottom: 1px solid --color-border
 
-.hero-badge — inline-flex pill
+.hero-badge: inline-flex pill
   background: --color-tag-bg
   border: 1px solid --color-border
   border-radius: 999px
@@ -435,7 +435,7 @@ Every `.md` file added to `/strategies` implies a new page, a new nav entry in e
 The order of rules in `css/style.css` must be maintained. Do not reorganize.
 
 ```
-:root — Design tokens (all custom properties)
+:root: Design tokens (all custom properties)
 Reset / base (*, html, body, a, ul, img)
 Layout grid (sidebar + content)
 Sidebar and top-bar nav

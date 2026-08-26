@@ -184,7 +184,7 @@ The v1.1.0 work was started in a single long session and paused before completio
 
 **Em dash cleanup in HTML pages (all 7 files, verified clean):** See PATCHNOTES.md v1.1.0 for per-file details.
 
-**CSS mobile fix:** `css/style.css` — `overflow-x: auto` added to `@media (max-width: 1024px)` block.
+**CSS mobile fix:** `css/style.css`: `overflow-x: auto` added to `@media (max-width: 1024px)` block.
 
 **GitHub Wiki:** Cloned and built five wiki pages (Home, Product Overview, Design System, Patch Notes, Adding a Strategy, Sidebar) pushed to `https://github.com/Azqato/leverage.wiki.git`.
 
@@ -629,8 +629,8 @@ Derived from the codebase as it exists at v1.2.0. Where a pattern is inconsisten
 ### Organization
 
 - One HTML file per page at the repo root.
-- All styles in `css/style.css` — one file, no partials.
-- All JS in `js/main.js` — one file.
+- All styles in `css/style.css`, one file, no partials.
+- All JS in `js/main.js`, one file.
 - Strategy content source in `/strategies/`.
 - Project documentation in `/docs/`.
 - The `reference/` folder contains one PDF (`The Kelly Letter User Guide.pdf`). Its intended status is unclear; see Risks and Open Questions §24, Q1.
@@ -649,7 +649,7 @@ JS uses defensive guards: `if (anchorLinks.length > 0)` before IntersectionObser
 
 Current format (dominant, v1.0.4 onward): `vX.Y.Z: description in sentence case`
 
-Earlier format (deprecated): `MX.Y — description` — discontinued because the `—` is an em dash, which is prohibited by the Writing Style policy.
+Earlier format (deprecated): `MX.Y — description` (discontinued; the `—` in that format is an em dash, prohibited by the Writing Style policy).
 
 Use the current format for all new commits.
 
@@ -789,8 +789,8 @@ Concrete instructions for anyone (human or AI) making changes to this project.
 
 | Kind of work | Read first | What else to check |
 |-------------|-----------|-------------------|
-| Edit strategy content | `/strategies/<name>.md` | Corresponding `<name>.html` — both must match after the edit |
-| Add or remove a nav item | `docs/DESIGN.md §11` (Navigation Convention) | All 7 HTML files — sidebar and top-bar nav in each |
+| Edit strategy content | `/strategies/<name>.md` | Corresponding `<name>.html`; both must match after the edit |
+| Add or remove a nav item | `docs/DESIGN.md §11` (Navigation Convention) | All 7 HTML files: sidebar and top-bar nav in each |
 | Edit CSS tokens or layout | `docs/DESIGN.md §2-6` and `css/style.css` | No hex values outside `:root` |
 | Add a new CSS component | `docs/DESIGN.md §7` (Component Patterns) | Add the component spec to DESIGN.md before or alongside the code |
 | Add a new strategy page | `docs/DESIGN.md §11` and `docs/PATCHNOTES.md` | Full 6-step checklist in DESIGN.md §11 |
@@ -801,7 +801,7 @@ Concrete instructions for anyone (human or AI) making changes to this project.
 
 - **Never hardcode a hex value in CSS.** All colors are `--color-*` custom properties. No exceptions.
 - **Never add a build step, a package manager, or an external dependency.** The project's simplicity is a first-class constraint enforced by the Simple over Clever tenet. If a feature requires npm or a CDN, it does not ship.
-- **Never use em dashes in any copy** — HTML pages, documentation, or JS comments. See Writing Style in §16.
+- **Never use em dashes in any copy**: HTML pages, documentation, or JS comments. See Writing Style in §16.
 - **Never use strategy tint colors for interactive elements.** Tints are decorative only. All interactive elements use `--color-accent` (`#00d4a0`).
 - **Never commit secrets, API keys, environment variables, or personal data.** This project has none and must never have any.
 - **Never push directly to `main` without reviewing `git status` first.** The repository is the deployed artifact; there is no staging step between commit and live site.
