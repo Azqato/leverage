@@ -4,6 +4,11 @@ Format: reverse chronological order. Semver (MAJOR.MINOR.PATCH). Each entry has 
 
 ---
 
+## [v2.0.0] 2026-10-02: The pages moved to Azqato Invests
+
+### Changed
+- Every page now redirects to its new home on Azqato Invests (azqato.com/invests/), as agreed in that site's PRD (decision D7). Each page keeps its old title and carries a canonical link, an immediate meta refresh, a `location.replace()` that keeps any `#section`, and a plain link, so each old address reaches its new page in one hop. Never reuse these addresses for other content. `index.html` goes to azqato.com/invests/leveraged/, and each strategy page to the page of the same name there.
+
 ## [v1.2.0] 2026-08-25: Documentation audit (second pass)
 
 Comprehensive second documentation audit. Six new sections added to PRD.md. README rewritten for a general reader. DESIGN.md updated with new component and code block em dash fixes. No changes to HTML pages or CSS beyond what was already live.
